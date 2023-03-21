@@ -16,3 +16,21 @@ class BaseGeometry:
             raise ValueError(name + " must be greater than 0")
 
 """ Program that build a full rectangle """
+
+
+class Rectangle(BaseGeometry):
+    """ class Rectangle that inherits from BaseGeometry """
+    def __init__(self, width, height):
+        """ Constructor """
+        self.__width = width
+        self.__height = height
+        BaseGeometry.integer_validator(self, "width", self.__width)
+        BaseGeometry.integer_validator(self, "height", self.__height)
+
+    def area(self):
+        """ method that return de area of rectangle """
+        return self.__width * self.__height
+
+    def __str__(self):
+        """ string representation """
+        return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
