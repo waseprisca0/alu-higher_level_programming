@@ -5,3 +5,4 @@ const strg3 = 'JavaScript is amazing';
 console.log(strg1);
 console.log(strg2);
 console.log(strg3);
+
