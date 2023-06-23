@@ -1,19 +1,11 @@
 #!/usr/bin/node
-
+const user = process.argv;
+const f = user[2];
+const s = user[3];
 const fs = require('fs');
 
-function writeFile (filePath, content) {
-  fs.writeFile(filePath, content, 'utf-8', (err) => {
-    if (err) {
-      console.error(`An error occurred while writing to the file: ${err}`);
-    }
-  });
-}
-
-if (process.argv.length > 3) {
-  const filePath = process.argv[2];
-  const content = process.argv[3];
-  writeFile(filePath, content);
-} else {
-  console.log('provide the file path and content as arguments.');
+try {
+  fs.writeFileSync(f, s, 'utf8');
+} catch (err) {
+  console.error(err);
 }
